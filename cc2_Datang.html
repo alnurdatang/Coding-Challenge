@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+	
+        <title>
+            Coding Challenge 2
+        </title>
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <style>
+		
+            body {
+			
+                background-color: lightseagreen;
+				
+            }
+
+            div {
+			
+                background-color: white;
+                width: 300px;
+                height: 30px;
+                text-align: center;
+				
+            }
+			
+        </style>
+		
+    </head>
+	
+    <body>
+	
+        <h1> RGB Color Equivalent </h1>
+
+        <div id="color">
+			rgb(255, 255, 255)
+        </div>
+		
+        <br>
+		
+        Red: <br>
+		
+        <input id="red" type="range" min="0" max="255" value="255" onchange="ccolor(value, 1);"> <br>
+		
+        Green: <br>
+		
+        <input id="green" type="range" min="0" max="255" value="255" onchange="ccolor(value, 2);"><br>
+		
+        Blue: <br>
+		
+        <input id="blue" type="range" min="0" max="255" value="255" onchange="ccolor(value, 3);">
+
+        <script>
+		
+            //add code to change the color and text of the div element
+			let r = 255;
+			let g = 255;
+			let b = 255;
+			
+			//x is the value taken from the slide and the n represents the r, g, b respectively
+           function ccolor(x, n){
+		   
+				if(n == 1){
+				
+					r = x;
+					document.getElementById("color").innerHTML = "rgb(" + r + ", " + g + ", " + b + ")";
+				
+				}
+				
+				if(n == 2){
+				
+					g = x;
+					document.getElementById("color").innerHTML = "rgb(" + r + ", " + g + ", " + b + ")";
+				
+				}
+				
+				if(n == 3){
+				
+					b = x;
+					document.getElementById("color").innerHTML = "rgb(" + r + ", " + g + ", " + b + ")";
+				
+				}
+				
+				document.getElementById("color").style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+           
+           }
+		   
+           </script>
+		   
+    </body>
+	
+</html>

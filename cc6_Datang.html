@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+	
+        <title>
+		
+            Coding Challenge 6
+			
+        </title>
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <style>
+		
+            body {
+			
+                background-color: lightseagreen;
+				
+            }
+           
+        </style>
+		
+    </head>
+	
+    <body>
+	
+        <h1> Quadratic Formula </h1>
+
+        <button onclick="solve()">Find the root</button>
+
+        <h4 id="result"></h4>
+
+        <script>
+		
+            function solve(){
+			
+				var a = prompt("Please input a");
+				var b = prompt("Please input b");
+				var c = prompt("Please input c");
+				
+				var Disc = ((b**2)-(4*a*c));
+				var DiscS = Math.sqrt((b**2)-(4*a*c))
+				
+				if (Disc > 0){
+				
+					var x1 = (-b + DiscS)/(2*a);
+					var x2 = (-b - DiscS)/(2*a);
+					document.getElementById("result").innerHTML = "The Roots are " + x1 + " and " + x2;
+				}
+				
+				else if(Disc == 0){
+				
+					var x1 = (-b)/(2*a);
+					document.getElementById("result").innerHTML = "The Root is " + x1;
+				
+				}
+				
+				else if(Disc < 0){
+				
+					document.getElementById("result").innerHTML = "Imaginary";
+				
+				}
+			   
+            }
+			
+        </script>
+		
+    </body>
+	
+</html>

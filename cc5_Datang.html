@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+	
+        <title>
+		
+            Coding Challenge 5
+			
+        </title>
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <style>
+		
+            body {
+			
+                background-color: lightseagreen;
+				
+            }
+           
+        </style>
+		
+    </head>
+	
+    <body>
+	
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()">Match Names</button>
+        <h3 id="name"></h3>
+		
+		<h1 id="display"></h1>
+		
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+
+        <script>
+		
+            function flames(){
+               
+				var name1 = prompt("Enter name 1").trim();
+			    var name2 = prompt("Enter name 2").trim();
+			    var Val1 = name1.replaceAll(/[^a-zA-Z]/g, "").length % 6;
+			    var Val2 = name2.replaceAll(/[^a-zA-Z]/g, "").length % 6;
+				var Comp = (Val1 + Val2) % 6;
+				
+				document.getElementById("display").innerHTML = name1 + " + " + name2;
+				
+				switch(Comp){
+				
+					case 0:
+						document.getElementById("result").innerHTML = "S - Sweethearts!";
+					break;
+				
+					case 1:
+						document.getElementById("result").innerHTML = "F - Friends!";
+					break;
+				
+					case 2:
+						document.getElementById("result").innerHTML = "L - Lovers!";
+					break;
+						
+					case 3:
+						document.getElementById("result").innerHTML = "A - Acquaintances!";
+					break;
+				
+					case 4:
+						document.getElementById("result").innerHTML = "M - Marriage!";
+					break;
+				
+					case 5:
+						document.getElementById("result").innerHTML = "E - Enemies!";
+					break;
+					
+				}
+				
+            }
+			
+        </script>
+		
+    </body>
+	
+</html>
